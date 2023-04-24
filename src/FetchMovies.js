@@ -2,9 +2,8 @@ import axios from "axios";
 
 const getAllMovies = ( setMovie ) => {
     axios.get("https://movie-frontend-nv.onrender.com")
-    .then(({ data }) =>{
-        console.log( data )
-        setMovie(data)
+    .then(({ data }) =>{console.log( data )
+        setMovie(data);
     })
 }
 
@@ -38,4 +37,4 @@ const deleteMovie  = (_id, setMovie) => {
 
 
 
-export { getAllMovies, addMovie, editMovie, deleteMovie }
+export { getAllMovies, addMovie, editMovie, deleteMovie };
