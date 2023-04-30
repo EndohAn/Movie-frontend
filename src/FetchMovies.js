@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getAllMovies = ( setMovie ) => {
-    axios.get("https://movie-frontend-nv.onrender.com")
+    axios.get("https://movie-backend-nvv.onrender.com")
     .then(({ data }) =>{console.log( data )
         setMovie(data);
     })
@@ -9,7 +9,7 @@ const getAllMovies = ( setMovie ) => {
 
 
 const addMovie = ( title, setTitle, setMovie) => {
-    axios.post("https://movie-frontend-nv.onrender.com/saveMovie", { title })
+    axios.post("https://movie-backend-nvv.onrender.com/saveMovie", { title })
     .then(( data ) =>{
         console.log( data )
         setTitle("");
@@ -18,7 +18,7 @@ const addMovie = ( title, setTitle, setMovie) => {
 }
 
 const editMovie  = (movieId, title, setMovie, setTitle, setEditing) => {
-    axios.put("https://movie-frontend-nv.onrender.com/editMovie", { _id: movieId, title })
+    axios.put("https://movie-backend-nvv.onrender.com/editMovie", { _id: movieId, title })
     .then(( data ) =>{
         console.log( data )
         setTitle("")
@@ -28,7 +28,7 @@ const editMovie  = (movieId, title, setMovie, setTitle, setEditing) => {
 }
 
 const deleteMovie  = (_id, setMovie) => {
-    axios.post("https://movie-frontend-nv.onrender.com/deleteMovie", { _id })
+    axios.post("https://movie-backend-nvv.onrender.com/deleteMovie", { _id })
     .then(( data ) =>{
         console.log( data )
         getAllMovies(setMovie)
